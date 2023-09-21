@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Otus.Teaching.PromoCodeFactory.Core.Domain.PromoCodeManagement
 {
-    internal class CustomerPreference
+    public class CustomerPreference
     {
+        public Guid CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
+
+        public Guid PreferenceId { get; set; }
+        public virtual Preference Preference { get; set; }
     }
+
+
 }

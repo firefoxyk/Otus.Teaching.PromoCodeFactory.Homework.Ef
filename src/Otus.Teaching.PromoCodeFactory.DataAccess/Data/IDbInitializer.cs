@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Otus.Teaching.PromoCodeFactory.DataAccess.Data
 {
-    internal class IDbInitializer
+    //Инициализация БД
+    public interface IDbInitializer
     {
+        public void InitializeDb();
     }
 }
