@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Otus.Teaching.PromoCodeFactory.Core.Domain;
 
@@ -19,6 +20,10 @@ namespace Otus.Teaching.PromoCodeFactory.Core.Abstractions.Repositories
         Task UpdateAsync(T entity);
 
         Task DeleteAsync(T entity);
+
+        Task<T> GetFirstWhere(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
+
 
     }
 }

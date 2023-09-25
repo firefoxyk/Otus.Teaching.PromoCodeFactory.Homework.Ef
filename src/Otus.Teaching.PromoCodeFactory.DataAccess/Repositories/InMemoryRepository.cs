@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Otus.Teaching.PromoCodeFactory.Core.Abstractions.Repositories;
 using Otus.Teaching.PromoCodeFactory.Core.Domain;
@@ -47,6 +48,16 @@ namespace Otus.Teaching.PromoCodeFactory.DataAccess.Repositories
         {
             throw new NotImplementedException();
         }
+        public Task<T> GetFirstWhere(Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }

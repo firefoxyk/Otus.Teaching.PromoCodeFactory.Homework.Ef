@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Otus.Teaching.PromoCodeFactory.DataAccess.Repositories
 {
@@ -58,6 +59,18 @@ namespace Otus.Teaching.PromoCodeFactory.DataAccess.Repositories
             _dataContext.Set<T>().Remove(entity);
             await _dataContext.SaveChangesAsync();
         }
+
+        public async Task<T> GetFirstWhere(Expression<Func<T, bool>> predicate)
+        {
+            return await _dataContext.Set<T>().FirstOrDefaultAsync(predicate);
+        }
+
+        public async Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate)
+        {
+            return await _dataContext.Set<T>().Where(predicate).ToListAsync();
+        }
+
+
     }
 
 

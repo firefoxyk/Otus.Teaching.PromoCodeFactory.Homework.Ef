@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime;
 using Otus.Teaching.PromoCodeFactory.Core.Domain.Administration;
 
@@ -17,8 +18,13 @@ namespace Otus.Teaching.PromoCodeFactory.Core.Domain.PromoCodeManagement
 
         public string PartnerName { get; set; }
 
-        public Employee PartnerManager { get; set; }
+        public virtual Employee PartnerManager { get; set; }
 
-        public Preference Preference { get; set; }
+        public virtual Preference Preference { get; set; }
+        public Guid? PartnerManagerId { get; set; }
+        public Guid PreferenceId { get; set; }
+
+        public virtual ICollection<PromoCodeCustomer> Customers { get; set; }
+
     }
 }
